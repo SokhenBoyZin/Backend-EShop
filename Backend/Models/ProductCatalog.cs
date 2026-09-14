@@ -2,6 +2,13 @@
 
 namespace Backend.Models
 {
+    public class Category
+    {
+        public int CategoryId { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public ICollection<Product> Products { get; set; } = new List<Product>();
+    }
+
     public class Product
     {
         public int ProductId { get; set; }
@@ -18,6 +25,10 @@ namespace Backend.Models
         public int FrontCameraMp { get; set; }
         public string OsVersion { get; set; } = string.Empty; // "iPadOS 26"
         public bool IsArchived { get; set; } // soft delete 
+
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; } = null!;
 
         // Navigation Property
         public ICollection<ProductVariant> Variants { get; set; } = new List<ProductVariant>();

@@ -2,7 +2,8 @@
 {
     public class ProductRequest
     {
-        public string Name { get; set; } = string.Empty; 
+        public string Name { get; set; } = string.Empty;
+        public int CategoryId { get; set; }
         public string Image { get; set; } = string.Empty;
         public string ChipName { get; set; } = string.Empty;
         public string CpuCores { get; set; } = string.Empty;

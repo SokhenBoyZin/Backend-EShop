@@ -1,5 +1,6 @@
 ﻿using Backend.DTOs.Request;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -15,17 +16,18 @@ namespace Backend.Controllers
             _productService = productService;
         }
 
-
+        // PUBLIC
         // GET: api/Product
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
+
         {
             var products = await _productService.GetAllProducts();
 
             return Ok(products);
         }
 
-
+        // PUBLIC
         // GET: api/Product/1
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(int id)
@@ -41,13 +43,17 @@ namespace Backend.Controllers
             return Ok(product);
         }
 
-
+        // ADMIN ONLY
         // POST: api/Product
+        [Authorize(Roles = "ADMIN")]
         [HttpPost]
         public async Task<IActionResult> CreateProduct(
             [FromBody] ProductRequest request)
         {
             var product = await _productService.CreateProduct(request);
+
+            if (product == null)
+                return NotFound("Create product failed! Category or field doesn't exists!");
 
             return CreatedAtAction(
                 nameof(GetProductById),
@@ -56,8 +62,9 @@ namespace Backend.Controllers
             );
         }
 
-
+        // ADMIN ONLY
         // PUT: api/Product/1
+        [Authorize(Roles = "ADMIN")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(
             int id,
@@ -74,8 +81,9 @@ namespace Backend.Controllers
             return Ok(product);
         }
 
-
+        // ADMIN ONLY
         // PATCH: api/Product/1/archive
+        [Authorize(Roles = "ADMIN")]
         [HttpPatch("{id}/archive")]
         public async Task<IActionResult> ArchiveProduct(int id)
         {
@@ -93,8 +101,9 @@ namespace Backend.Controllers
             });
         }
 
-
+        // ADMIN ONLY
         // PATCH: api/Product/1/restore
+        [Authorize(Roles = "ADMIN")]
         [HttpPatch("{id}/restore")]
         public async Task<IActionResult> RestoreProduct(int id)
         {

@@ -16,6 +16,8 @@
         public int MainCameraMp { get; set; }
         public int FrontCameraMp { get; set; }
         public string OsVersion { get; set; } = string.Empty;
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; } = string.Empty;
 
         // Variants
         public List<ProductVariantResponse> Variants { get; set; } = new();

@@ -1,12 +1,11 @@
 ﻿using Backend.Db;
 using Backend.DTOs.Request;
 using Backend.DTOs.Response;
+using Backend.DTOs.User;
 using Backend.Models;
 using Backend.Service;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace Backend.Controllers
 {
@@ -17,25 +16,41 @@ namespace Backend.Controllers
         private readonly ApplicationDbContext _context;
         private readonly ITokenService _tokenService;
 
-        public AuthController(ApplicationDbContext context, ITokenService tokenService)
+        public AuthController(
+            ApplicationDbContext context,
+            ITokenService tokenService)
         {
             _context = context;
             _tokenService = tokenService;
         }
 
+        // =========================
+        // REGISTER
+        // =========================
         [HttpPost("register")]
-        public async Task<ActionResult<RegisterResponse>> Register(RegisterRequest dto)
+        public async Task<ActionResult<RegisterResponse>> Register(
+            [FromBody] RegisterRequest dto)
         {
-            if (await _context.Users.AnyAsync(u => u.email == dto.email.ToLower()))
+            // Check email
+            if (await _context.Users.AnyAsync(
+                u => u.email == dto.email.ToLower()))
             {
-                return BadRequest("Email already exists!");
+                return BadRequest(new
+                {
+                    message = "Email already exists!"
+                });
             }
 
+            // Check password confirmation
             if (dto.password != dto.confirm_password)
             {
-                return BadRequest("Passwords do not match!");
+                return BadRequest(new
+                {
+                    message = "Passwords do not match!"
+                });
             }
 
+            // Create user
             var newUser = new User
             {
                 username = dto.username,
@@ -49,42 +64,66 @@ namespace Backend.Controllers
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
 
-            return new RegisterResponse
+            // Return response
+            return Ok(new RegisterResponse
             {
                 message = "Registration successful",
+
                 user = new UserResponse
                 {
-                    id = newUser.id,
-                    username = newUser.username,
-                    email = newUser.email,
-                    role = newUser.Role.ToString()
+                    Id = newUser.id,
+                    Username = newUser.username,
+                    Email = newUser.email,
+                    Role = newUser.Role,
+                    CreatedAt = newUser.CreatedAt,
+                    UpdatedAt = newUser.UpdatedAt
                 },
+
                 token = _tokenService.CreateToken(newUser)
-            };
+            });
         }
 
+        // =========================
+        // LOGIN
+        // =========================
         [HttpPost("login")]
-        public async Task<ActionResult<LoginResponse>> Login(LoginRequest dto)
+        public async Task<ActionResult<LoginResponse>> Login(
+            [FromBody] LoginRequest dto)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.email == dto.email.ToLower());
+            var email = dto.email.ToLower();
 
-            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.password, user.passwordHash))
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.email == email);
+
+            // User not found or password incorrect
+            if (user == null ||
+                !BCrypt.Net.BCrypt.Verify(
+                    dto.password,
+                    user.passwordHash))
             {
-                return Unauthorized("Invalid email or password.");
+                return Unauthorized(new
+                {
+                    message = "Invalid email or password."
+                });
             }
 
-            return new LoginResponse
+            // Return response
+            return Ok(new LoginResponse
             {
-                message = "Registration successful",
+                message = "Login successful",
+
                 user = new UserResponse
                 {
-                    id = user.id,
-                    username = user.username,
-                    email = user.email,
-                    role = user.Role.ToString()
+                    Id = user.id,
+                    Username = user.username,
+                    Email = user.email,
+                    Role = user.Role,
+                    CreatedAt = user.CreatedAt,
+                    UpdatedAt = user.UpdatedAt
                 },
+
                 token = _tokenService.CreateToken(user)
-            };
+            });
         }
     }
 }

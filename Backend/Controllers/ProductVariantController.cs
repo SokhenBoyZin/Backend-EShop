@@ -1,5 +1,6 @@
 ﻿using Backend.DTOs.Request;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -43,6 +44,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> CreateProductVariant(
             [FromBody] ProductVariantRequest? request)
         {
@@ -76,10 +78,9 @@ namespace Backend.Controllers
 
             if (variant == null)
             {
-                return BadRequest(new
+                return NotFound(new
                 {
-                    message =
-                        "Invalid ProductId, ColorId, CapacityId, or ConnectivityTypeId"
+                    message = "Product variant not found"
                 });
             }
 
@@ -87,6 +88,7 @@ namespace Backend.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> UpdateProductVariant(
             int id,
             [FromBody] ProductVariantRequest? request)
@@ -121,10 +123,9 @@ namespace Backend.Controllers
 
             if (variant == null)
             {
-                return BadRequest(new
+                return NotFound(new
                 {
-                    message =
-                        "Product variant not found or invalid reference ID"
+                    message = "Product variant not found"
                 });
             }
 
@@ -132,6 +133,7 @@ namespace Backend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteProductVariant(int id)
         {
             var result =

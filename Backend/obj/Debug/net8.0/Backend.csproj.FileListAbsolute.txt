@@ -141,4 +141,6 @@ D:\ETEC\FinalProject\Backend\Backend\obj\Debug\net8.0\Backend.genruntimeconfig.c
 D:\ETEC\FinalProject\Backend\Backend\obj\Debug\net8.0\ref\Backend.dll
 D:\ETEC\FinalProject\Backend\Backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\ETEC\FinalProject\Backend\Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\ETEC\FinalProject\Backend\Backend\obj\Debug\net8.0\Backend.sourcelink.json
+D:\ETEC\FinalProject\Backend\Backend\bin\Debug\net8.0\Backend.staticwebassets.runtime.json
 D:\ETEC\FinalProject\Backend\Backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

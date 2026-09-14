@@ -8,7 +8,7 @@ namespace Backend.Services
         Task<List<ProductResponse>> GetAllProducts();
         Task<ProductResponse?> GetProductById(int id);
 
-        Task<ProductResponse> CreateProduct(ProductRequest request);
+        Task<ProductResponse?> CreateProduct(ProductRequest request);
         Task<ProductResponse?> UpdateProduct(int id, ProductRequest request);
 
         Task<bool> ArchiveProduct(int id);

@@ -1,5 +1,6 @@
 ﻿using Backend.DTOs.Request;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -38,6 +39,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> CreateColor([FromBody] ColorRequest request)
         {
             if (request == null) return BadRequest(new
@@ -55,6 +57,7 @@ namespace Backend.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> UpdateColor(int id, [FromBody] ColorRequest request)
         {
             var color = await _colorService.UpdateColor(id, request);
@@ -69,6 +72,7 @@ namespace Backend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteColor(int id)
         {
             var result = await _colorService.DeleteColor(id);

@@ -1,4 +1,6 @@
-﻿namespace Backend.DTOs.Response
+﻿using Backend.DTOs.User;
+
+namespace Backend.DTOs.Response
 {
     public class RegisterResponse
     {

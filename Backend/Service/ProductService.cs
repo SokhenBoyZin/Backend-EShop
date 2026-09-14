@@ -19,6 +19,7 @@ namespace Backend.Services
         {
             var products = await _context.Products
                 .Where(p => !p.IsArchived)
+                .Include(p => p.Category)
                 .Include(p => p.Variants)
                     .ThenInclude(v => v.Color)
                 .Include(p => p.Variants)
@@ -34,6 +35,7 @@ namespace Backend.Services
         {
             var product = await _context.Products
                 .Where(p => p.ProductId == id && !p.IsArchived)
+                .Include(p => p.Category)
                 .Include(p => p.Variants)
                     .ThenInclude(v => v.Color)
                 .Include(p => p.Variants)
@@ -48,12 +50,20 @@ namespace Backend.Services
             return MapToResponse(product);
         }
 
-        public async Task<ProductResponse> CreateProduct(ProductRequest request)
+        public async Task<ProductResponse?> CreateProduct(ProductRequest request)
         {
+            var category = await _context.Categories
+                                .FirstOrDefaultAsync(c => c.CategoryId == request.CategoryId);
+
+            if (category == null)
+            {
+                return null;
+            }
             var product = new Product
             {
                 Name = request.Name,
                 Image = request.Image,
+                CategoryId = request.CategoryId,
 
                 ChipName = request.ChipName,
                 CpuCores = request.CpuCores,
@@ -79,7 +89,13 @@ namespace Backend.Services
             int id,
             ProductRequest request)
         {
+            var category = await _context.Categories
+                                .FirstOrDefaultAsync(c => c.CategoryId == request.CategoryId);
+
+            if (category == null) return null;
+
             var product = await _context.Products
+                .Include(p => p.Category)
                 .Include(p => p.Variants)
                     .ThenInclude(v => v.Color)
                 .Include(p => p.Variants)
@@ -92,7 +108,7 @@ namespace Backend.Services
 
             product.Name = request.Name;
             product.Image = request.Image;
-
+            product.CategoryId = request.CategoryId;
             product.ChipName = request.ChipName;
             product.CpuCores = request.CpuCores;
             product.GpuCores = request.GpuCores;
@@ -144,7 +160,8 @@ namespace Backend.Services
                 ProductId = product.ProductId,
                 Name = product.Name,
                 Image = product.Image,
-
+                CategoryId = product.CategoryId,
+                CategoryName = product.Category.Name,
                 ChipName = product.ChipName,
                 CpuCores = product.CpuCores,
                 GpuCores = product.GpuCores,

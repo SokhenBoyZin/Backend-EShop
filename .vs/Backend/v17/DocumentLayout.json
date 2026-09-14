@@ -3,76 +3,88 @@
   "WorkspaceRootPath": "D:\\ETEC\\FinalProject\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dtos\\request\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dtos\\request\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dtos\\response\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dtos\\response\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dtos\\response\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dtos\\response\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dtos\\response\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dtos\\response\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\productvariantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\productvariantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\productvariantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\productvariantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\iproductvariantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\iproductvariantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dtos\\response\\updaterolerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dtos\\response\\updaterolerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\connectivitytypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\connectivitytypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\userprofilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\userprofilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\connectivitytypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\connectivitytypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\iconnectivitytypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\iconnectivitytypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\capacitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\capacitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\capacityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\capacityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\icapacityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\icapacityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\icolorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\icolorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dtos\\request\\capacityrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dtos\\request\\capacityrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\colorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\colorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dtos\\response\\colorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dtos\\response\\colorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\models\\productcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\models\\productcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\models\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\models\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\models\\deliverymethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\models\\deliverymethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,224 +94,278 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductVariantController.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ProductVariantController.cs",
-              "RelativeDocumentMoniker": "Backend\\Controllers\\ProductVariantController.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ProductVariantController.cs",
-              "RelativeToolTip": "Backend\\Controllers\\ProductVariantController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI8AAAARAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:57:13.338Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductVariantService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ProductVariantService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\ProductVariantService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ProductVariantService.cs",
-              "RelativeToolTip": "Backend\\Service\\ProductVariantService.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAcwMMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:56:01.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IProductVariantService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IProductVariantService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\IProductVariantService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IProductVariantService.cs",
-              "RelativeToolTip": "Backend\\Service\\IProductVariantService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:54:51.575Z"
+              "WhenOpened": "2026-09-14T15:22:10.141Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ConnectivityTypeController.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ConnectivityTypeController.cs",
-              "RelativeDocumentMoniker": "Backend\\Controllers\\ConnectivityTypeController.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ConnectivityTypeController.cs",
-              "RelativeToolTip": "Backend\\Controllers\\ConnectivityTypeController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwHEAAAAAAAAAAAAAAA==",
+              "Title": "RegisterResponse.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\RegisterResponse.cs",
+              "RelativeDocumentMoniker": "Backend\\DTOs\\Response\\RegisterResponse.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\RegisterResponse.cs",
+              "RelativeToolTip": "Backend\\DTOs\\Response\\RegisterResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:48:54.289Z"
+              "WhenOpened": "2026-09-14T15:22:00.258Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ConnectivityTypeService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ConnectivityTypeService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\ConnectivityTypeService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ConnectivityTypeService.cs",
-              "RelativeToolTip": "Backend\\Service\\ConnectivityTypeService.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAmwHEAAAABAAAAAAAAAA==",
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "Backend\\DTOs\\Response\\LoginResponse.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\LoginResponse.cs",
+              "RelativeToolTip": "Backend\\DTOs\\Response\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:47:56.204Z"
+              "WhenOpened": "2026-09-14T15:21:09.314Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IConnectivityTypeService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IConnectivityTypeService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\IConnectivityTypeService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IConnectivityTypeService.cs",
-              "RelativeToolTip": "Backend\\Service\\IConnectivityTypeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:46:28.994Z"
+              "WhenOpened": "2026-09-14T15:19:42.952Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "CapacityController.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\CapacityController.cs",
-              "RelativeDocumentMoniker": "Backend\\Controllers\\CapacityController.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\CapacityController.cs",
-              "RelativeToolTip": "Backend\\Controllers\\CapacityController.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAcwBwAAAAxAAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "Backend\\Service\\UserService.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\UserService.cs",
+              "RelativeToolTip": "Backend\\Service\\UserService.cs",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAAwA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:44:58.966Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CapacityRequest.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Request\\CapacityRequest.cs",
-              "RelativeDocumentMoniker": "Backend\\DTOs\\Request\\CapacityRequest.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Request\\CapacityRequest.cs",
-              "RelativeToolTip": "Backend\\DTOs\\Request\\CapacityRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:43:18.988Z"
+              "WhenOpened": "2026-09-14T15:18:38.845Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "CapacityService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\CapacityService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\CapacityService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\CapacityService.cs",
-              "RelativeToolTip": "Backend\\Service\\CapacityService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAhAAAAAAAAAA==",
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IUserService.cs",
+              "RelativeDocumentMoniker": "Backend\\Service\\IUserService.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IUserService.cs",
+              "RelativeToolTip": "Backend\\Service\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:42:56.653Z"
+              "WhenOpened": "2026-09-14T15:18:13.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\UserResponse.cs",
+              "RelativeDocumentMoniker": "Backend\\DTOs\\Response\\UserResponse.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\UserResponse.cs",
+              "RelativeToolTip": "Backend\\DTOs\\Response\\UserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T15:17:44.671Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ICapacityService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ICapacityService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\ICapacityService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ICapacityService.cs",
-              "RelativeToolTip": "Backend\\Service\\ICapacityService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Title": "UpdateRoleRequest.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\UpdateRoleRequest.cs",
+              "RelativeDocumentMoniker": "Backend\\DTOs\\Response\\UpdateRoleRequest.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\UpdateRoleRequest.cs",
+              "RelativeToolTip": "Backend\\DTOs\\Response\\UpdateRoleRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:42:33.082Z"
+              "WhenOpened": "2026-09-14T15:17:22.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRequest.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Request\\UserRequest.cs",
+              "RelativeDocumentMoniker": "Backend\\DTOs\\Request\\UserRequest.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Request\\UserRequest.cs",
+              "RelativeToolTip": "Backend\\DTOs\\Request\\UserRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T15:16:54.371Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "ColorController.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ColorController.cs",
-              "RelativeDocumentMoniker": "Backend\\Controllers\\ColorController.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ColorController.cs",
-              "RelativeToolTip": "Backend\\Controllers\\ColorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAMAAAAAAAAAA==",
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\OrderStatus.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\OrderStatus.cs",
+              "RelativeToolTip": "Backend\\Models\\OrderStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:33:23.044Z"
+              "WhenOpened": "2026-09-14T15:05:22.896Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "ColorResponse.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\ColorResponse.cs",
-              "RelativeDocumentMoniker": "Backend\\DTOs\\Response\\ColorResponse.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Response\\ColorResponse.cs",
-              "RelativeToolTip": "Backend\\DTOs\\Response\\ColorResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAAwGIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:24:04.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ColorService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ColorService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\ColorService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ColorService.cs",
-              "RelativeToolTip": "Backend\\Service\\ColorService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAgwCoAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:23:11.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IColorService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IColorService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\IColorService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IColorService.cs",
-              "RelativeToolTip": "Backend\\Service\\IColorService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:22:37.733Z"
+              "WhenOpened": "2026-09-14T14:57:56.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "ProductCatalog.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\ProductCatalog.cs",
-              "RelativeDocumentMoniker": "Backend\\Models\\ProductCatalog.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\ProductCatalog.cs",
-              "RelativeToolTip": "Backend\\Models\\ProductCatalog.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA7wCAAAAAAAAAAAAAAAA==",
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\OrderService.cs",
+              "RelativeDocumentMoniker": "Backend\\Service\\OrderService.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\OrderService.cs",
+              "RelativeToolTip": "Backend\\Service\\OrderService.cs",
+              "ViewState": "AgIAAGQBAAAAAAAAAAAUwHMBAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:17:46.11Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Backend\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Backend\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T03:00:56.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Backend\\Program.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Program.cs",
-              "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T02:59:43.217Z",
+              "WhenOpened": "2026-09-14T14:57:02.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ProductService.cs",
-              "RelativeDocumentMoniker": "Backend\\Service\\ProductService.cs",
-              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ProductService.cs",
-              "RelativeToolTip": "Backend\\Service\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABBAAAAAAAAAA==",
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Backend\\Service\\IOrderService.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IOrderService.cs",
+              "RelativeToolTip": "Backend\\Service\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-08T02:50:41.165Z"
+              "WhenOpened": "2026-09-14T14:56:49.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T14:42:35.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PaymentStatus.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\PaymentStatus.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\PaymentStatus.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\PaymentStatus.cs",
+              "RelativeToolTip": "Backend\\Models\\PaymentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T07:46:37.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ITransactionService.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ITransactionService.cs",
+              "RelativeDocumentMoniker": "Backend\\Service\\ITransactionService.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ITransactionService.cs",
+              "RelativeToolTip": "Backend\\Service\\ITransactionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T07:12:32.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\TransactionService.cs",
+              "RelativeDocumentMoniker": "Backend\\Service\\TransactionService.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\TransactionService.cs",
+              "RelativeToolTip": "Backend\\Service\\TransactionService.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAuwNsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T07:02:46.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TransactionController.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\TransactionController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\TransactionController.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\TransactionController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\TransactionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T06:51:27.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DeliveryMethod.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\DeliveryMethod.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\DeliveryMethod.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Models\\DeliveryMethod.cs",
+              "RelativeToolTip": "Backend\\Models\\DeliveryMethod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T06:47:06.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserProfileController.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\UserProfileController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\UserProfileController.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\UserProfileController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\UserProfileController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwEMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T06:45:01.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Backend\\Program.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Program.cs",
+              "RelativeToolTip": "Backend\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T02:15:47.177Z",
+              "EditorCaption": ""
             }
           ]
         }

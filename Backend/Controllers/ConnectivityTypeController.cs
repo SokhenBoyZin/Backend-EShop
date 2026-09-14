@@ -1,5 +1,6 @@
 ﻿using Backend.DTOs.Request;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -46,6 +47,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> CreateConnectivityType(
             [FromBody] ConnectivityTypeRequest? request)
         {
@@ -77,6 +79,7 @@ namespace Backend.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> UpdateConnectivityType(
             int id,
             [FromBody] ConnectivityTypeRequest? request)
@@ -113,6 +116,7 @@ namespace Backend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteConnectivityType(int id)
         {
             var result =

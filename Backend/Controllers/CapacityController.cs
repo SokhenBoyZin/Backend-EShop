@@ -1,5 +1,6 @@
 ﻿using Backend.DTOs.Request;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -40,6 +41,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> CreateCapacity(
             [FromBody] CapacityRequest? request)
         {
@@ -70,6 +72,7 @@ namespace Backend.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> UpdateCapacity(
             int id,
             [FromBody] CapacityRequest? request)
@@ -105,6 +108,7 @@ namespace Backend.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteCapacity(int id)
         {
             var result =
