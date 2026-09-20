@@ -2,3 +2,6 @@ wwwroot\images\b9e0a9e6-a941-41f3-91e8-165383d1a2ad.png
 wwwroot\images\2e4d038d-0535-41de-8785-dcc61f2cafe5.jpg
 wwwroot\images\c43ba75f-98b1-41b7-bafe-90a7aba50e42.png
 wwwroot\images\25824bdb-cb01-4255-8fc0-c6d36610d67b.png
+wwwroot\images\1317e7df-4d1c-4418-9854-6abda6af7c1e.png
+wwwroot\images\2564310f-a094-4897-90d2-7c6c3d8cddf1.png
+wwwroot\images\bcac1ddd-5e1c-40d9-9315-ec4b9ad857d4.jpg

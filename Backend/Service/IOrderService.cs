@@ -18,5 +18,9 @@ namespace Backend.Services
         Task<List<OrderResponse>> GetAllOrdersAsync();
 
         Task<OrderResponse?> AdminGetByIdAsync(int orderId);
+
+        Task<List<OrderResponse>> GetAllRecentOrdersAsync(int count = 4);
+
+        Task<List<OrderResponse>> GetAdminPendingOrdersAsync();
     }
 }

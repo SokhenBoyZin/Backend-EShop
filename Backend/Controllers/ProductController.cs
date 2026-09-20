@@ -1,4 +1,5 @@
 ﻿using Backend.DTOs.Request;
+using Backend.Models;
 using Backend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -120,5 +121,15 @@ namespace Backend.Controllers
                 message = "Product restored successfully"
             });
         }
+
+        [HttpGet("/archieved")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> ArchievedProduct()
+        {
+            var result = await _productService.GetAllProductArchieved();
+
+            return Ok(result);
+        }
+
     }
 }

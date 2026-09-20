@@ -13,5 +13,6 @@ namespace Backend.Services
 
         Task<bool> ArchiveProduct(int id);
         Task<bool> RestoreProduct(int id);
+        Task<List<ProductResponse>> GetAllProductArchieved();
     }
 }

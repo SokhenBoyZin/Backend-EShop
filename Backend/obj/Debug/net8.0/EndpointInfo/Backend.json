@@ -351,6 +351,41 @@
         }
       }
     },
+    "/api/Category/archived": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Category/{id}/restore": {
+      "put": {
+        "tags": [
+          "Category"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Color": {
       "get": {
         "tags": [
@@ -890,6 +925,41 @@
         }
       }
     },
+    "/api/orders/recent-all": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 4
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/orders/admin/pending": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/payment-methods": {
       "get": {
         "tags": [
@@ -1165,6 +1235,18 @@
         }
       }
     },
+    "/archieved": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ProductVariant": {
       "get": {
         "tags": [
@@ -1277,6 +1359,43 @@
             "name": "id",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/analytics/revenue": {
+      "get": {
+        "tags": [
+          "RevenueAnalytics"
+        ],
+        "parameters": [
+          {
+            "name": "Period",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Month",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1803,11 +1922,10 @@
       },
       "DeliveryMethod": {
         "enum": [
-          0,
-          1
+          "MOTOR",
+          "PICKUP"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "LoginRequest": {
         "required": [
@@ -1881,14 +1999,13 @@
       },
       "OrderStatus": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4
+          "PENDING",
+          "PROCESSING",
+          "SHIPPING",
+          "DELIVERED",
+          "CANCELLED"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "PaymentMethodRequest": {
         "type": "object",
@@ -1902,12 +2019,11 @@
       },
       "PaymentStatus": {
         "enum": [
-          0,
-          1,
-          2
+          "PENDING",
+          "PAID",
+          "FAILED"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "ProductRequest": {
         "type": "object",
@@ -2043,11 +2159,10 @@
       },
       "Role": {
         "enum": [
-          0,
-          1
+          "USER",
+          "ADMIN"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "TransactionRequest": {
         "type": "object",

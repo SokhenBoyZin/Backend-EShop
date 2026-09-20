@@ -82,6 +82,9 @@ namespace Backend.Services
 
             await _context.SaveChangesAsync();
 
+            product.Category = category;
+            product.Variants = new List<ProductVariant>();
+
             return MapToResponse(product);
         }
 
@@ -151,6 +154,22 @@ namespace Backend.Services
             await _context.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<List<ProductResponse>> GetAllProductArchieved()
+        {
+            var products = await _context.Products
+                .Where(p => p.IsArchived)
+                .Include(p => p.Category)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.Color)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.Capacity)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.ConnectivityType)
+                .ToListAsync();
+
+            return products.Select(MapToResponse).ToList();
         }
 
         private ProductResponse MapToResponse(Product product)

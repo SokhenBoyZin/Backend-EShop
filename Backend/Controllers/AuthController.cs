@@ -24,9 +24,6 @@ namespace Backend.Controllers
             _tokenService = tokenService;
         }
 
-        // =========================
-        // REGISTER
-        // =========================
         [HttpPost("register")]
         public async Task<ActionResult<RegisterResponse>> Register(
             [FromBody] RegisterRequest dto)
@@ -83,9 +80,6 @@ namespace Backend.Controllers
             });
         }
 
-        // =========================
-        // LOGIN
-        // =========================
         [HttpPost("login")]
         public async Task<ActionResult<LoginResponse>> Login(
             [FromBody] LoginRequest dto)
@@ -95,7 +89,6 @@ namespace Backend.Controllers
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.email == email);
 
-            // User not found or password incorrect
             if (user == null ||
                 !BCrypt.Net.BCrypt.Verify(
                     dto.password,

@@ -192,11 +192,12 @@ namespace Backend.Services
                 return false;
             }
 
-            var transaction =
-                await _context.Transactions
-                    .Include(x => x.Order)
-                    .FirstOrDefaultAsync(x =>
-                        x.TransactionId == transactionId);
+            var transaction = await _context.Transactions
+        .Include(x => x.Order)
+            .ThenInclude(x => x.OrderItems)
+                .ThenInclude(x => x.ProductVariant)
+        .FirstOrDefaultAsync(x =>
+            x.TransactionId == transactionId);
 
             if (transaction == null)
             {
@@ -212,6 +213,51 @@ namespace Backend.Services
             // PAYMENT SUCCESS
             if (request.PaymentStatus == PaymentStatus.PAID)
             {
+
+                // Order must still be PENDING
+                if (transaction.Order.OrderStatus != OrderStatus.PENDING)
+                {
+                    return false;
+                }
+
+                // =========================
+                // CHECK STOCK FIRST
+                // =========================
+                foreach (var item in transaction.Order.OrderItems)
+                {
+                    if (item.ProductVariant == null)
+                    {
+                        return false;
+                    }
+
+                    if (item.Quantity <= 0)
+                    {
+                        return false;
+                    }
+
+                    if (item.ProductVariant.StockQuantity < item.Quantity)
+                    {
+                        // Not enough stock
+                        return false;
+                    }
+                }
+
+                // =========================
+                // REDUCE STOCK
+                // =========================
+                foreach (var item in transaction.Order.OrderItems)
+                {
+                    if (item.ProductVariant == null)
+                    {
+                        return false;
+                    }
+
+                    item.ProductVariant.StockQuantity -= item.Quantity;
+                }
+
+                // =========================
+                // UPDATE TRANSACTION
+                // =========================
                 transaction.PaymentStatus =
                     PaymentStatus.PAID;
 
@@ -221,13 +267,21 @@ namespace Backend.Services
                 transaction.PaidAt =
                     DateTime.UtcNow;
 
-                // Payment successful
-                // Order moves to PROCESSING
+
+                // =========================
+                // UPDATE ORDER
+                // =========================
                 transaction.Order.OrderStatus =
                     OrderStatus.PROCESSING;
+
+                await _context.SaveChangesAsync();
+
+                return true;
             }
 
+            // =========================
             // PAYMENT FAILED
+            // =========================
             else if (request.PaymentStatus == PaymentStatus.FAILED)
             {
                 transaction.PaymentStatus =
@@ -237,15 +291,11 @@ namespace Backend.Services
                     request.TransactionRef;
 
                 transaction.PaidAt = null;
+
+                await _context.SaveChangesAsync();
+
+                return true;
             }
-
-            else
-            {
-                return false;
-
-            }
-
-            await _context.SaveChangesAsync();
 
             return true;
         }
