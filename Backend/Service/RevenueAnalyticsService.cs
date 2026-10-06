@@ -103,9 +103,13 @@ namespace Backend.Services
 
 
             var yearStart = new DateTime(
-                request.Year,
-                1,
-                1);
+    request.Year,
+    1,
+    1,
+    0,
+    0,
+    0,
+    DateTimeKind.Utc);
 
             var yearEnd = yearStart.AddYears(1);
 
