@@ -6,5 +6,7 @@ namespace Backend.DTOs.Response
     {
         public int CategoryId { get; set; }
         public string Name { get; set; } = string.Empty;
+        public bool IsArchived { get; set; }
+        public int ProductsCount { get; set; }
     }
 }

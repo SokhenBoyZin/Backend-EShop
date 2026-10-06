@@ -15,5 +15,9 @@ namespace Backend.Services
         Task<TransactionResponse?> AdminGetByIdAsync(int transactionId);
         Task<bool> AdminUpdatePaymentAsync(int transactionId, TransactionUpdateRequest request);
 
+        Task<VerifyPaymentResponse?> VerifyPaymentAsync(int transactionId, int userId, string? transactionRef);
+
+        Task<bool> CancelTransactionAsync(int transactionId, int userId);
+
     }
 }

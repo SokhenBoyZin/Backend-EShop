@@ -197,6 +197,28 @@ namespace Backend.Controllers
             return Ok(order);
         }
 
+        // GET: api/orders/recent-all
+        // Admin/Staff gets recent orders across ALL users
+        [HttpGet("recent-all")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> GetAllRecentOrders([FromQuery] int count = 4)
+        {
+            var recentOrders = await _service.GetAllRecentOrdersAsync(count);
+
+            return Ok(recentOrders);
+        }
+
+        // GET: api/orders/admin/pending
+        // Admin gets ALL pending orders across all users
+        [HttpGet("admin/pending")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> GetAdminPendingOrders()
+        {
+            var pendingOrders = await _service.GetAdminPendingOrdersAsync();
+
+            return Ok(pendingOrders);
+        }
+
         // Get current user ID from JWT
         private int? GetUserId()
         {

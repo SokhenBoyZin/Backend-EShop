@@ -121,12 +121,6 @@ namespace Backend.Services
 
                 subtotal += itemTotal;
 
-
-                // Reserve stock
-                variant.StockQuantity -=
-                    item.Quantity;
-
-
                 // Create OrderItem
                 var orderItem = new OrderItem
                 {
@@ -287,58 +281,53 @@ namespace Backend.Services
             return MapToResponse(order);
         }
 
-
         // CANCEL ORDER
-        public async Task<bool>
-            CancelOrderAsync(
-                int orderId,
-                int userId)
+        public async Task<bool> CancelOrderAsync(
+            int orderId,
+            int userId)
         {
-            var order =
-                await _context.Orders
-
-                    .Include(x =>
-                        x.OrderItems)
-
-                    .FirstOrDefaultAsync(x =>
-                        x.OrderId == orderId &&
-                        x.UserId == userId);
-
+            var order = await _context.Orders
+                .Include(x => x.Transactions)
+                .FirstOrDefaultAsync(x =>
+                    x.OrderId == orderId &&
+                    x.UserId == userId);
 
             if (order == null)
             {
                 return false;
             }
 
-
-            // Only PENDING order can be cancelled
-            if (order.OrderStatus !=
-                OrderStatus.PENDING)
+            // Only PENDING orders can be cancelled
+            if (order.OrderStatus != OrderStatus.PENDING)
             {
                 return false;
             }
 
+            // ==========================================
+            // CANCEL ORDER
+            // ==========================================
 
-            // Return stock
-            foreach (var item in order.OrderItems)
+            order.OrderStatus = OrderStatus.CANCELLED;
+
+
+            // ==========================================
+            // CANCEL PENDING TRANSACTION
+            // ==========================================
+
+            var pendingTransaction = order.Transactions
+                .FirstOrDefault(x =>
+                    x.PaymentStatus == PaymentStatus.PENDING);
+
+            if (pendingTransaction != null)
             {
-                var variant =
-                    await _context.ProductVariants
-                        .FirstOrDefaultAsync(x =>
-                            x.ProductVariantId ==
-                            item.ProductVariantId);
-
-                if (variant != null)
-                {
-                    variant.StockQuantity +=
-                        item.Quantity;
-                }
+                pendingTransaction.PaymentStatus =
+                    PaymentStatus.FAILED;
             }
 
 
-            order.OrderStatus =
-                OrderStatus.CANCELLED;
-
+            // ==========================================
+            // SAVE BOTH CHANGES
+            // ==========================================
 
             await _context.SaveChangesAsync();
 
@@ -349,54 +338,93 @@ namespace Backend.Services
         // UPDATE ORDER STATUS
         public async Task<bool> UpdateStatusAsync(int orderId, OrderStatus newStatus)
         {
-            var order =
-                await _context.Orders
-                    .FirstOrDefaultAsync(x =>
-                        x.OrderId == orderId);
-
+            var order = await _context.Orders
+                .Include(x => x.OrderItems)
+                .FirstOrDefaultAsync(x => x.OrderId == orderId);
 
             if (order == null)
             {
                 return false;
             }
 
-
-            // Only allow valid status transitions
-            bool validTransition =
-                order.OrderStatus switch
-                {
-                    OrderStatus.PENDING =>
-                        newStatus ==
-                        OrderStatus.CANCELLED,
-
-                    OrderStatus.PROCESSING =>
-                        newStatus ==
-                        OrderStatus.SHIPPING,
-
-                    OrderStatus.SHIPPING =>
-                        newStatus ==
-                        OrderStatus.DELIVERED,
-
-                    _ => false
-                };
-
-
-            if (!validTransition)
+            // PENDING -> PROCESSING
+            if (order.OrderStatus == OrderStatus.PENDING &&
+                newStatus == OrderStatus.PROCESSING)
             {
-                return false;
+                // Check stock again before reducing
+                foreach (var item in order.OrderItems)
+                {
+                    var variant = await _context.ProductVariants
+                        .FirstOrDefaultAsync(x =>
+                            x.ProductVariantId == item.ProductVariantId);
+
+                    if (variant == null)
+                    {
+                        return false;
+                    }
+
+                    if (variant.StockQuantity < item.Quantity)
+                    {
+                        // Not enough stock anymore
+                        return false;
+                    }
+                }
+
+                // Reduce stock
+                foreach (var item in order.OrderItems)
+                {
+                    var variant = await _context.ProductVariants
+                        .FirstOrDefaultAsync(x =>
+                            x.ProductVariantId == item.ProductVariantId);
+
+                    variant!.StockQuantity -= item.Quantity;
+                }
+
+                order.OrderStatus = OrderStatus.PROCESSING;
+
+                await _context.SaveChangesAsync();
+
+                return true;
             }
 
+            // PENDING -> CANCELLED
+            if (order.OrderStatus == OrderStatus.PENDING &&
+                newStatus == OrderStatus.CANCELLED)
+            {
+                // No stock restoration needed
+                // because stock was never reduced.
 
-            order.OrderStatus =
-                newStatus;
+                order.OrderStatus = OrderStatus.CANCELLED;
 
+                await _context.SaveChangesAsync();
 
-            await _context.SaveChangesAsync();
+                return true;
+            }
 
-            return true;
+            // PROCESSING -> SHIPPING
+            if (order.OrderStatus == OrderStatus.PROCESSING &&
+                newStatus == OrderStatus.SHIPPING)
+            {
+                order.OrderStatus = OrderStatus.SHIPPING;
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            // SHIPPING -> DELIVERED
+            if (order.OrderStatus == OrderStatus.SHIPPING &&
+                newStatus == OrderStatus.DELIVERED)
+            {
+                order.OrderStatus = OrderStatus.DELIVERED;
+
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
-
-
         // DELIVERY FEE
         private decimal CalculateDeliveryFee(
             DeliveryMethod deliveryMethod)
@@ -410,7 +438,6 @@ namespace Backend.Services
                 _ => 0m
             };
         }
-
 
         // GET ALL ORDERS
         // ADMIN ONLY
@@ -466,7 +493,60 @@ namespace Backend.Services
             return MapToResponse(order);
         }
 
+        // GET RECENT ORDERS
+        // GET ALL RECENT ORDERS (ADMIN / ALL USERS)
+        public async Task<List<OrderResponse>> GetAllRecentOrdersAsync(int count = 4)
+        {
+            var orders = await _context.Orders
+                .Include(x => x.User)
+                .Include(x => x.DeliveryLocation)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.Product)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.Color)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.Capacity)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.ConnectivityType)
+                .OrderByDescending(x => x.CreatedAt)
+                .Take(count)
+                .ToListAsync();
 
+            return orders
+                .Select(MapToResponse)
+                .ToList();
+        }
+
+        // GET ALL PENDING ORDERS
+        // ADMIN ONLY
+        public async Task<List<OrderResponse>> GetAdminPendingOrdersAsync()
+        {
+            var orders = await _context.Orders
+                .Where(x => x.OrderStatus == OrderStatus.PENDING)
+                .Include(x => x.DeliveryLocation)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.Product)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.Color)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.Capacity)
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.ProductVariant)
+                        .ThenInclude(x => x.ConnectivityType)
+                .OrderByDescending(x => x.CreatedAt)
+                .ToListAsync();
+
+            return orders
+                .Select(MapToResponse)
+                .ToList();
+        }
 
         // MAP ORDER TO RESPONSE
         private OrderResponse

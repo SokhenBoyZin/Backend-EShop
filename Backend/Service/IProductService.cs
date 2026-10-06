@@ -1,4 +1,5 @@
-﻿using Backend.DTOs.Request;
+﻿using Backend.DTOs.Product;
+using Backend.DTOs.Request;
 using Backend.DTOs.Response;
 
 namespace Backend.Services
@@ -13,5 +14,9 @@ namespace Backend.Services
 
         Task<bool> ArchiveProduct(int id);
         Task<bool> RestoreProduct(int id);
+        Task<List<ProductResponse>> GetAllProductArchieved();
+
+        Task<List<LowStockResponse>> GetLowStockProductsAsync();
+        Task<List<ProductResponse>> SearchProducts(string search);
     }
 }

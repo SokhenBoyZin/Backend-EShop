@@ -192,11 +192,12 @@ namespace Backend.Services
                 return false;
             }
 
-            var transaction =
-                await _context.Transactions
-                    .Include(x => x.Order)
-                    .FirstOrDefaultAsync(x =>
-                        x.TransactionId == transactionId);
+            var transaction = await _context.Transactions
+        .Include(x => x.Order)
+            .ThenInclude(x => x.OrderItems)
+                .ThenInclude(x => x.ProductVariant)
+        .FirstOrDefaultAsync(x =>
+            x.TransactionId == transactionId);
 
             if (transaction == null)
             {
@@ -212,6 +213,51 @@ namespace Backend.Services
             // PAYMENT SUCCESS
             if (request.PaymentStatus == PaymentStatus.PAID)
             {
+
+                // Order must still be PENDING
+                if (transaction.Order.OrderStatus != OrderStatus.PENDING)
+                {
+                    return false;
+                }
+
+                // =========================
+                // CHECK STOCK FIRST
+                // =========================
+                foreach (var item in transaction.Order.OrderItems)
+                {
+                    if (item.ProductVariant == null)
+                    {
+                        return false;
+                    }
+
+                    if (item.Quantity <= 0)
+                    {
+                        return false;
+                    }
+
+                    if (item.ProductVariant.StockQuantity < item.Quantity)
+                    {
+                        // Not enough stock
+                        return false;
+                    }
+                }
+
+                // =========================
+                // REDUCE STOCK
+                // =========================
+                foreach (var item in transaction.Order.OrderItems)
+                {
+                    if (item.ProductVariant == null)
+                    {
+                        return false;
+                    }
+
+                    item.ProductVariant.StockQuantity -= item.Quantity;
+                }
+
+                // =========================
+                // UPDATE TRANSACTION
+                // =========================
                 transaction.PaymentStatus =
                     PaymentStatus.PAID;
 
@@ -221,13 +267,21 @@ namespace Backend.Services
                 transaction.PaidAt =
                     DateTime.UtcNow;
 
-                // Payment successful
-                // Order moves to PROCESSING
+
+                // =========================
+                // UPDATE ORDER
+                // =========================
                 transaction.Order.OrderStatus =
                     OrderStatus.PROCESSING;
+
+                await _context.SaveChangesAsync();
+
+                return true;
             }
 
+            // =========================
             // PAYMENT FAILED
+            // =========================
             else if (request.PaymentStatus == PaymentStatus.FAILED)
             {
                 transaction.PaymentStatus =
@@ -237,17 +291,189 @@ namespace Backend.Services
                     request.TransactionRef;
 
                 transaction.PaidAt = null;
+
+                await _context.SaveChangesAsync();
+
+                return true;
             }
 
-            else
+            return true;
+        }
+
+        public async Task<bool> CancelTransactionAsync(int transactionId, int userId)
+        {
+            var transaction = await _context.Transactions
+                .Include(t => t.Order)
+                .FirstOrDefaultAsync(t =>
+                    t.TransactionId == transactionId &&
+                    t.Order.UserId == userId);
+
+            if (transaction == null)
             {
                 return false;
-
             }
+
+            // Only PENDING transactions can be cancelled
+            if (transaction.PaymentStatus != PaymentStatus.PENDING)
+            {
+                return false;
+            }
+
+            transaction.PaymentStatus = PaymentStatus.FAILED;
 
             await _context.SaveChangesAsync();
 
             return true;
+        }
+
+
+        // verify payment ref
+        public async Task<VerifyPaymentResponse?> VerifyPaymentAsync(int transactionId, int userId, string? transactionRef)
+        {
+            var transaction = await _context.Transactions
+                .Include(t => t.Order)
+                    .ThenInclude(o => o.OrderItems)
+                        .ThenInclude(i => i.ProductVariant)
+                .FirstOrDefaultAsync(t =>
+                    t.TransactionId == transactionId &&
+                    t.Order.UserId == userId);
+
+            if (transaction == null)
+            {
+                return null;
+            }
+
+            // ==========================================
+            // ALREADY PAID
+            // ==========================================
+
+            if (transaction.PaymentStatus == PaymentStatus.PAID)
+            {
+                return new VerifyPaymentResponse
+                {
+                    Success = true,
+                    Message = "Payment has already been confirmed.",
+                    TransactionId = transaction.TransactionId,
+                    PaymentStatus = transaction.PaymentStatus.ToString(),
+                    OrderStatus = transaction.Order.OrderStatus.ToString()
+                };
+            }
+
+            // ==========================================
+            // TRANSACTION MUST BE PENDING
+            // ==========================================
+
+            if (transaction.PaymentStatus != PaymentStatus.PENDING)
+            {
+                return new VerifyPaymentResponse
+                {
+                    Success = false,
+                    Message = "This transaction cannot be verified.",
+                    TransactionId = transaction.TransactionId,
+                    PaymentStatus = transaction.PaymentStatus.ToString(),
+                    OrderStatus = transaction.Order.OrderStatus.ToString()
+                };
+            }
+
+            // ==========================================
+            // ORDER MUST BE PENDING
+            // ==========================================
+
+            if (transaction.Order.OrderStatus != OrderStatus.PENDING)
+            {
+                return new VerifyPaymentResponse
+                {
+                    Success = false,
+                    Message = "This order cannot be paid.",
+                    TransactionId = transaction.TransactionId,
+                    PaymentStatus = transaction.PaymentStatus.ToString(),
+                    OrderStatus = transaction.Order.OrderStatus.ToString()
+                };
+            }
+
+            // ==========================================
+            // CHECK STOCK FIRST
+            // ==========================================
+
+            foreach (var item in transaction.Order.OrderItems)
+            {
+                if (item.ProductVariant == null)
+                {
+                    return new VerifyPaymentResponse
+                    {
+                        Success = false,
+                        Message = "Product variant not found.",
+                        TransactionId = transaction.TransactionId,
+                        PaymentStatus = transaction.PaymentStatus.ToString(),
+                        OrderStatus = transaction.Order.OrderStatus.ToString()
+                    };
+                }
+
+                if (item.Quantity <= 0)
+                {
+                    return new VerifyPaymentResponse
+                    {
+                        Success = false,
+                        Message = "Invalid order quantity.",
+                        TransactionId = transaction.TransactionId,
+                        PaymentStatus = transaction.PaymentStatus.ToString(),
+                        OrderStatus = transaction.Order.OrderStatus.ToString()
+                    };
+                }
+
+                if (item.ProductVariant.StockQuantity < item.Quantity)
+                {
+                    return new VerifyPaymentResponse
+                    {
+                        Success = false,
+                        Message =
+                            $"Not enough stock for product variant {item.ProductVariantId}.",
+                        TransactionId = transaction.TransactionId,
+                        PaymentStatus = transaction.PaymentStatus.ToString(),
+                        OrderStatus = transaction.Order.OrderStatus.ToString()
+                    };
+                }
+            }
+
+            // ==========================================
+            // REDUCE STOCK
+            // ==========================================
+
+            foreach (var item in transaction.Order.OrderItems)
+            {
+                item.ProductVariant!.StockQuantity -= item.Quantity;
+            }
+
+            // ==========================================
+            // UPDATE TRANSACTION
+            // ==========================================
+
+            transaction.PaymentStatus = PaymentStatus.PAID;
+
+            transaction.TransactionRef = transactionRef;
+
+            transaction.PaidAt = DateTime.UtcNow;
+
+            // ==========================================
+            // UPDATE ORDER
+            // ==========================================
+
+            transaction.Order.OrderStatus = OrderStatus.PROCESSING;
+
+            // ==========================================
+            // SAVE EVERYTHING
+            // ==========================================
+
+            await _context.SaveChangesAsync();
+
+            return new VerifyPaymentResponse
+            {
+                Success = true,
+                Message = "Payment verified successfully.",
+                TransactionId = transaction.TransactionId,
+                PaymentStatus = transaction.PaymentStatus.ToString(),
+                OrderStatus = transaction.Order.OrderStatus.ToString()
+            };
         }
 
         // MAP TRANSACTION TO RESPONSE

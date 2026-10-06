@@ -6,24 +6,16 @@ namespace Backend.Services
     {
         Task<UserResponse?> GetMyProfileAsync(int userId);
 
-        Task<UserResponse?> UpdateMyProfileAsync(
-            int userId,
-            UserRequest request);
+        Task<UserResponse?> UpdateMyProfileAsync(int userId, UserRequest request);
 
         Task<List<UserResponse>> GetAllUsersAsync();
 
-        Task<UserResponse?> GetUserByIdAsync(
-            int userId);
+        Task<UserResponse?> GetUserByIdAsync(int userId);
 
-        Task<UserResponse?> UpdateUserAsync(
-            int userId,
-            UserRequest request);
+        Task<UserResponse?> UpdateUserAsync(int userId, UserRequest request);
 
-        Task<bool> UpdateRoleAsync(
-            int userId,
-            UpdateRoleRequest request);
+        Task<bool> UpdateRoleAsync(int userId, UpdateRoleRequest request);
 
-        Task<bool> DeleteUserAsync(
-            int userId);
+        Task<bool> DeleteUserAsync(int userId);
     }
 }

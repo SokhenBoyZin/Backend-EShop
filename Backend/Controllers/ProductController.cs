@@ -1,4 +1,5 @@
 ﻿using Backend.DTOs.Request;
+using Backend.Models;
 using Backend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +24,15 @@ namespace Backend.Controllers
 
         {
             var products = await _productService.GetAllProducts();
+
+            return Ok(products);
+        }
+
+        // search by name
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchProducts([FromQuery] string search)
+        {
+            var products = await _productService.SearchProducts(search);
 
             return Ok(products);
         }
@@ -120,5 +130,23 @@ namespace Backend.Controllers
                 message = "Product restored successfully"
             });
         }
+
+        [HttpGet("low-stock")]
+        public async Task<IActionResult> GetLowStockProducts()
+        {
+            var products = await _productService.GetLowStockProductsAsync();
+
+            return Ok(products);
+        }
+
+        [HttpGet("/archieved")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> ArchievedProduct()
+        {
+            var result = await _productService.GetAllProductArchieved();
+
+            return Ok(result);
+        }
+
     }
 }

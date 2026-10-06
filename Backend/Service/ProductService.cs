@@ -1,4 +1,5 @@
 ﻿using Backend.Db;
+using Backend.DTOs.Product;
 using Backend.DTOs.Request;
 using Backend.DTOs.Response;
 using Backend.Models;
@@ -19,6 +20,32 @@ namespace Backend.Services
         {
             var products = await _context.Products
                 .Where(p => !p.IsArchived)
+                .Include(p => p.Category)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.Color)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.Capacity)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.ConnectivityType)
+                .ToListAsync();
+
+            return products.Select(MapToResponse).ToList();
+        }
+
+        public async Task<List<ProductResponse>> SearchProducts(string search)
+        {
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                return new List<ProductResponse>();
+            }
+
+            search = search.Trim();
+
+            var products = await _context.Products
+                .Where(p =>
+                    !p.IsArchived &&
+                    p.Name.Contains(search)
+                )
                 .Include(p => p.Category)
                 .Include(p => p.Variants)
                     .ThenInclude(v => v.Color)
@@ -81,6 +108,9 @@ namespace Backend.Services
             _context.Products.Add(product);
 
             await _context.SaveChangesAsync();
+
+            product.Category = category;
+            product.Variants = new List<ProductVariant>();
 
             return MapToResponse(product);
         }
@@ -151,6 +181,58 @@ namespace Backend.Services
             await _context.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<List<ProductResponse>> GetAllProductArchieved()
+        {
+            var products = await _context.Products
+                .Where(p => p.IsArchived)
+                .Include(p => p.Category)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.Color)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.Capacity)
+                .Include(p => p.Variants)
+                    .ThenInclude(v => v.ConnectivityType)
+                .ToListAsync();
+
+            return products.Select(MapToResponse).ToList();
+        }
+
+        public async Task<List<LowStockResponse>> GetLowStockProductsAsync()
+        {
+            const int LOW_STOCK_THRESHOLD = 5;
+
+            var lowStockProducts = await _context.ProductVariants
+                .Where(v =>
+                    v.StockQuantity <= LOW_STOCK_THRESHOLD &&
+                    !v.Product.IsArchived
+                )
+                .Select(v => new LowStockResponse
+                {
+                    ProductVariantId = v.ProductVariantId,
+                    ProductId = v.ProductId,
+                    ProductName = v.Product.Name,
+                    Image = v.Product.Image,
+                    StockQuantity = v.StockQuantity,
+                    Price = v.Price,
+
+                    Color = v.Color != null
+                        ? v.Color.Name
+                        : null,
+
+                    Capacity = v.Capacity != null
+                        ? v.Capacity.SizeLabel
+                        : null,
+
+                    ConnectivityType = v.ConnectivityType != null
+                        ? v.ConnectivityType.Name
+                        : null
+                })
+                .OrderBy(v => v.StockQuantity)
+                .ToListAsync();
+
+            return lowStockProducts;
         }
 
         private ProductResponse MapToResponse(Product product)

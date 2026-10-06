@@ -169,6 +169,76 @@ namespace Backend.Controllers
             });
         }
 
+        // PUT: api/transactions/{id}/verify-payment
+        // Customer confirms a Bakong payment after Bakong returns PAID
+        [HttpPut("{id}/verify-payment")]
+        public async Task<IActionResult> VerifyPayment(int id, [FromBody] VerifyPaymentRequest request)
+        {
+            var userId = GetUserId();
+
+            if (userId == null)
+            {
+                return Unauthorized();
+            }
+
+            var result = await _service.VerifyPaymentAsync(
+                id,
+                userId.Value,
+                request?.TransactionRef
+            );
+
+            if (result == null)
+            {
+                return NotFound(new
+                {
+                    message = "Transaction not found."
+                });
+            }
+
+            if (!result.Success)
+            {
+                return BadRequest(new
+                {
+                    message = result.Message
+                });
+            }
+
+            return Ok(result);
+        }
+
+        // PUT: api/transactions/{id}/cancel
+        // Customer cancels their own pending payment transaction
+        [HttpPut("{id}/cancel")]
+        public async Task<IActionResult> CancelTransaction(int id)
+        {
+            var userId = GetUserId();
+
+            if (userId == null)
+            {
+                return Unauthorized();
+            }
+
+            var result = await _service.CancelTransactionAsync(
+                id,
+                userId.Value
+            );
+
+            if (!result)
+            {
+                return BadRequest(new
+                {
+                    message =
+                        "Transaction cannot be cancelled. It may not exist or may already be paid."
+                });
+            }
+
+            return Ok(new
+            {
+                message =
+                    "Transaction cancelled successfully."
+            });
+        }
+
         // Get current user ID from JWT
         private int? GetUserId()
         {
