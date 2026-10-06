@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\ETEC\\FinalProject\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,11 +77,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": ".dockerignore",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\.dockerignore",
               "RelativeDocumentMoniker": "Backend\\.dockerignore",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "DockerFile",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DockerFile",
               "RelativeDocumentMoniker": "Backend\\DockerFile",
@@ -102,8 +102,7 @@
               "RelativeToolTip": "Backend\\DockerFile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-10-06T11:07:54.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-06T11:07:54.806Z"
             },
             {
               "$type": "Document",
@@ -117,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Backend\\appsettings.Development.json",
@@ -274,15 +273,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
               "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Program.cs",
               "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-10T02:15:47.177Z"
+              "WhenOpened": "2026-09-10T02:15:47.177Z",
+              "EditorCaption": ""
             }
           ]
         }
