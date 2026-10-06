@@ -45,7 +45,11 @@ namespace Backend.Services
                 var startDate = new DateTime(
                     request.Year,
                     month,
-                    1);
+                    1,
+                    0,
+                    0,
+                    0,
+                    DateTimeKind.Utc);
 
                 var endDate = startDate.AddMonths(1);
 

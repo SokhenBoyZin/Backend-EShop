@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\ETEC\\FinalProject\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\service\\revenueanalyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\service\\revenueanalyticsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|d:\\etec\\finalproject\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7974F0DA-588F-4A68-80C5-B88B9AEAEFED}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -77,11 +81,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "RevenueAnalyticsService.cs",
+              "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\RevenueAnalyticsService.cs",
+              "RelativeDocumentMoniker": "Backend\\Service\\RevenueAnalyticsService.cs",
+              "ToolTip": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\RevenueAnalyticsService.cs",
+              "RelativeToolTip": "Backend\\Service\\RevenueAnalyticsService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAACMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T13:36:59.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": ".dockerignore",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\.dockerignore",
               "RelativeDocumentMoniker": "Backend\\.dockerignore",
@@ -93,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DockerFile",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DockerFile",
               "RelativeDocumentMoniker": "Backend\\DockerFile",
@@ -105,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
@@ -115,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Backend\\appsettings.Development.json",
@@ -123,12 +140,11 @@
               "RelativeToolTip": "Backend\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-30T01:30:36.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-30T01:30:36.64Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\.gitignore",
               "RelativeDocumentMoniker": "Backend\\.gitignore",
@@ -140,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\appsettings.json",
               "RelativeDocumentMoniker": "Backend\\appsettings.json",
@@ -152,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Backend\\Controllers\\OrderController.cs",
@@ -164,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserProfileService.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\UserProfileService.cs",
               "RelativeDocumentMoniker": "Backend\\Service\\UserProfileService.cs",
@@ -172,12 +188,11 @@
               "RelativeToolTip": "Backend\\Service\\UserProfileService.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAAAowIYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T14:16:11.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T14:16:11.8Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Backend\\Controllers\\ProductController.cs",
@@ -189,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ProductService.cs",
               "RelativeDocumentMoniker": "Backend\\Service\\ProductService.cs",
@@ -201,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "IProductService.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\IProductService.cs",
               "RelativeDocumentMoniker": "Backend\\Service\\IProductService.cs",
@@ -213,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "VerifyPaymentRequest.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\DTOs\\Request\\VerifyPaymentRequest.cs",
               "RelativeDocumentMoniker": "Backend\\DTOs\\Request\\VerifyPaymentRequest.cs",
@@ -225,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TransactionController.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Controllers\\TransactionController.cs",
               "RelativeDocumentMoniker": "Backend\\Controllers\\TransactionController.cs",
@@ -237,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ITransactionService.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\ITransactionService.cs",
               "RelativeDocumentMoniker": "Backend\\Service\\ITransactionService.cs",
@@ -249,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TransactionService.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\TransactionService.cs",
               "RelativeDocumentMoniker": "Backend\\Service\\TransactionService.cs",
@@ -261,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "OrderService.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Service\\OrderService.cs",
               "RelativeDocumentMoniker": "Backend\\Service\\OrderService.cs",
@@ -273,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\ETEC\\FinalProject\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
