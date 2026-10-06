@@ -279,9 +279,7 @@ namespace Backend.Services
                 return true;
             }
 
-            // =========================
-            // PAYMENT FAILED
-            // =========================
+          
             else if (request.PaymentStatus == PaymentStatus.FAILED)
             {
                 transaction.PaymentStatus =
@@ -322,6 +320,7 @@ namespace Backend.Services
             transaction.PaymentStatus = PaymentStatus.FAILED;
 
             await _context.SaveChangesAsync();
+
 
             return true;
         }

@@ -131,6 +131,7 @@ namespace Backend.Controllers
             });
         }
 
+
         [HttpGet("low-stock")]
         public async Task<IActionResult> GetLowStockProducts()
         {

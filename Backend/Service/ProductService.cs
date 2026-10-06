@@ -199,6 +199,7 @@ namespace Backend.Services
             return products.Select(MapToResponse).ToList();
         }
 
+
         public async Task<List<LowStockResponse>> GetLowStockProductsAsync()
         {
             const int LOW_STOCK_THRESHOLD = 5;

@@ -282,9 +282,8 @@ namespace Backend.Services
         }
 
         // CANCEL ORDER
-        public async Task<bool> CancelOrderAsync(
-            int orderId,
-            int userId)
+        public async Task<bool>
+            CancelOrderAsync(int orderId, int userId)
         {
             var order = await _context.Orders
                 .Include(x => x.Transactions)
@@ -303,31 +302,9 @@ namespace Backend.Services
                 return false;
             }
 
-            // ==========================================
-            // CANCEL ORDER
-            // ==========================================
+            order.OrderStatus =
+                OrderStatus.CANCELLED;
 
-            order.OrderStatus = OrderStatus.CANCELLED;
-
-
-            // ==========================================
-            // CANCEL PENDING TRANSACTION
-            // ==========================================
-
-            var pendingTransaction = order.Transactions
-                .FirstOrDefault(x =>
-                    x.PaymentStatus == PaymentStatus.PENDING);
-
-            if (pendingTransaction != null)
-            {
-                pendingTransaction.PaymentStatus =
-                    PaymentStatus.FAILED;
-            }
-
-
-            // ==========================================
-            // SAVE BOTH CHANGES
-            // ==========================================
 
             await _context.SaveChangesAsync();
 
@@ -336,7 +313,9 @@ namespace Backend.Services
 
 
         // UPDATE ORDER STATUS
-        public async Task<bool> UpdateStatusAsync(int orderId, OrderStatus newStatus)
+        public async Task<bool> UpdateStatusAsync(
+    int orderId,
+    OrderStatus newStatus)
         {
             var order = await _context.Orders
                 .Include(x => x.OrderItems)
