@@ -18,7 +18,8 @@ builder.Services.AddCors(options =>
             .WithOrigins(
                 "http://localhost:3000",
                 "http://localhost:3001",
-                "https://e-shop-website-delta.vercel.app"
+                "https://e-shop-website-delta.vercel.app",
+                "https://e-shop-dashboard-alpha.vercel.app/"
             )
             .AllowAnyHeader()
             .AllowAnyMethod()
